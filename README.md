@@ -1,2 +1,24 @@
-# linux-monitor
-A lightweight, agentless, single-file Python monitoring tool for Windows that pings each Linux server on its own configurable interval, opens SSH only when the host replies, reads live CPU, RAM, &amp; disk usage against per-server thresholds, and logs clear normal or critical status alerts. Config is stored in a text file; no server-side agent needed.
+# Linux Monitor (Windows)
+
+## Install
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+
+## Run
+    python gui_app.py          (GUI; use pythonw to hide console)
+    python main.py -c config.json   (console mode; copy config.example.json to config.json first)
+
+## Password
+Config stores only the env var NAME. Set value:
+    setx DB01_SSH_PASSWORD "YOUR_PASSWORD"
+(or enter it in the GUI field). Key auth is preferred.
+
+## known_hosts
+Host key checking is enforced (RejectPolicy). In the GUI select a server and click
+"اعتماد به host key", compare the fingerprint with the server's
+(ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub), then confirm.
+Or: ssh monitor@HOST  once, and answer yes.
+
+All values in config.example.json are samples: replace them.
+This code has not been tested; try on a test server first.

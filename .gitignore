@@ -1,0 +1,19 @@
+# Local runtime files (may contain private info)
+config.json
+logs/
+*.log
+known_hosts
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.spec
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db

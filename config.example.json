@@ -1,0 +1,28 @@
+{
+  "ping_timeout_seconds": 3,
+  "ssh_timeout_seconds": 10,
+  "log_file": "logs/monitor.log",
+  "servers": [
+    {
+      "name": "web-01 (SAMPLE)",
+      "host": "192.0.2.10",
+      "port": 22,
+      "username": "monitor",
+      "auth": {
+        "method": "key",
+        "key_path": "C:\\Users\\YOUR_USER\\.ssh\\id_ed25519",
+        "key_passphrase_env": "WEB01_KEY_PASSPHRASE"
+      },
+      "interval_minutes": 5,
+      "thresholds": { "cpu": 90, "ram": 90, "disk": 85 }
+    },
+    {
+      "name": "db-01 (SAMPLE)",
+      "host": "192.0.2.20",
+      "port": 22,
+      "username": "monitor",
+      "auth": { "method": "password", "password_env": "DB01_SSH_PASSWORD" },
+      "interval_minutes": 30
+    }
+  ]
+}
