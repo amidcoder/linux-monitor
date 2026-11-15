@@ -9,6 +9,11 @@
     python gui_app.py          (GUI; use pythonw to hide console)
     python main.py -c config.json   (console mode; copy config.example.json to config.json first)
 
+## Make exe file
+    pip install pyinstaller
+    pyinstaller --onefile --windowed --name LinuxMonitor gui_app.py
+EXE file created in dist\LinuxMonitor.exe.
+
 ## Password
 Config stores only the env var NAME. Set value:
     setx DB01_SSH_PASSWORD "YOUR_PASSWORD"
